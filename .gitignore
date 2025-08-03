@@ -1,8 +1,8 @@
-# Local env files
+# env
 .env
-
-# 絶対に消さないでください。
-.ignore-me
 
 # Serena
 .serena
+
+# 絶対に消さないでください。
+.ignore-me
