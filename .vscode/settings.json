@@ -1,0 +1,27 @@
+{
+  "editor.tabSize": 2,
+  "editor.defaultFormatter": "biomejs.biome",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.biome": "explicit",
+    "source.organizeImports.biome": "explicit",
+    "source.addMissingImports.ts": "explicit"
+  },
+  // 起動時のターミナル設定
+  "restoreTerminals.terminals": [
+    {
+      "splitTerminals": [
+        {
+          "name": "app",
+          "commands": ["bun run dev"]
+        },
+        {
+          "name": "claude",
+          "commands": [
+            "claude || { echo '初回起動時のみ設定ファイルの不整合で失敗するのでリトライします'; claude; }"
+          ]
+        }
+      ]
+    }
+  ]
+}

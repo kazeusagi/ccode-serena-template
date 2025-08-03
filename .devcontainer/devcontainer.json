@@ -1,0 +1,32 @@
+{
+  "name": "Ccode Devcontainer Template",
+  "image": "node:24-bookworm",
+  "runArgs": ["--env-file", ".devcontainer/.env"],
+  "remoteEnv": {
+    "PATH": "/home/node/.bun/bin:${containerEnv:PATH}" // bunはbashにしかパスが通ってないのでパスを通す
+  },
+  "remoteUser": "node", // non-root-user
+  "workspaceFolder": "/home/node/app",
+  "initializeCommand": ".devcontainer/initializeCommand.sh", // 起動時にホスト環境で実行するコマンド
+  "onCreateCommand": ".devcontainer/onCreateCommand.sh", // コンテナ内で最初に実行されるコマンド
+  "postCreateCommand": ".devcontainer/postCreateCommand.sh", // ユーザー割当後に実行されるコマンド
+  "mounts": [
+    "source=${localWorkspaceFolder},target=${containerWorkspaceFolder},type=bind", // ワークスペース
+    "source=${localWorkspaceFolder}/.ignore-me/.claude,target=/home/node/.claude,type=bind", // claude settings dir
+    "source=${localWorkspaceFolder}/.ignore-me/.claude.json,target=/home/node/.claude.json,type=bind" // claude settings json
+  ],
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {} // GitHub CLI
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "biomejs.biome",
+        "oderwat.indent-rainbow",
+        "oven.bun-vscode",
+        "Anthropic.claude-code",
+        "EthanSK.restore-terminals"
+      ]
+    }
+  }
+}
