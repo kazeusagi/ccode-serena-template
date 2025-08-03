@@ -1,7 +1,10 @@
 {
-  "name": "Ccode Devcontainer Template",
+  "name": "Ccode Serena Template",
   "image": "node:24-bookworm",
-  "runArgs": ["--env-file", ".devcontainer/.env"],
+  "runArgs": [
+    "--env-file",
+    ".devcontainer/.env"
+  ],
   "remoteEnv": {
     "PATH": "/home/node/.bun/bin:${containerEnv:PATH}" // bunはbashにしかパスが通ってないのでパスを通す
   },
@@ -16,14 +19,11 @@
     "source=${localWorkspaceFolder}/.ignore-me/.claude.json,target=/home/node/.claude.json,type=bind" // claude settings json
   ],
   "features": {
-    "ghcr.io/devcontainers/features/github-cli:1": {} // GitHub CLI
+    // "ghcr.io/devcontainers/features/github-cli:1": {} // GitHub CLI
   },
   "customizations": {
     "vscode": {
       "extensions": [
-        "biomejs.biome",
-        "oderwat.indent-rainbow",
-        "oven.bun-vscode",
         "Anthropic.claude-code",
         "EthanSK.restore-terminals"
       ]

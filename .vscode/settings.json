@@ -1,0 +1,21 @@
+{
+  // 起動時のターミナル設定
+  "restoreTerminals.terminals": [
+    {
+      "splitTerminals": [
+        {
+          "name": "claude",
+          "commands": [
+            "claude || { echo '初回起動時のみ設定ファイルの不整合で失敗するのでリトライします'; claude; }"
+          ]
+        },
+        {
+          "name": "monitor",
+          "commands": [
+            "uvx claude-monitor --timezone Asia/Tokyo"
+          ]
+        }
+      ]
+    }
+  ]
+}
