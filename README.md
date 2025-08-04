@@ -9,8 +9,7 @@ Claude Code と Serena MCP を利用するための最小設定を含むテン�
 - Dev Container の起動  
 `shift + ctrl + p` で `Dev Containers: Rebuild and Reopen in Container` を実行
 
-- 後は勝手に開発環境と Claude Code が立ち上がります。  
-初回のみ認証が求められます。
+- 後は勝手に Claude Code とトークン使用量モニターが立ち上がります。  
 
 ## ✨ 追加の設定
 
@@ -23,8 +22,8 @@ Claude Code と Serena MCP を利用するための最小設定を含むテン�
 
 ### 起動時に Claude Code を自動で立ち上げたい
 
-拡張機能 [Restore Terminals](https://marketplace.visualstudio.com/items?itemName=EthanSK.restore-terminals) が使えます。  
-`vscode`
+拡張機能 [Restore Terminals](https://marketplace.visualstudio.com/items?itemName=EthanSK.restore-terminals) を入れています。  
+`.vscode/settings.json` の設定を参照ください。
 
 ## 🚨 その他、留意すべきこと
 
